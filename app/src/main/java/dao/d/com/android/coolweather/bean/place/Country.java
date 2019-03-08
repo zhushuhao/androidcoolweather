@@ -2,14 +2,15 @@ package dao.d.com.android.coolweather.bean.place;
 
 import com.google.gson.annotations.SerializedName;
 
+import org.litepal.crud.LitePalSupport;
+
 import java.io.Serializable;
 
-public class Country implements Serializable {
+public class Country extends LitePalSupport implements Serializable {
     @SerializedName("name")
     private String countyName;
     @SerializedName("weather_id")
-    private int weatherId;
-    private int cityId;
+    private String weatherId;
 
     private transient int id = 0;
 
@@ -21,20 +22,12 @@ public class Country implements Serializable {
         this.countyName = countyName;
     }
 
-    public int getWeatherId() {
+    public String getWeatherId() {
         return weatherId;
     }
 
-    public void setWeatherId(int weatherId) {
+    public void setWeatherId(String weatherId) {
         this.weatherId = weatherId;
-    }
-
-    public int getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(int cityId) {
-        this.cityId = cityId;
     }
 
     public int getId() {

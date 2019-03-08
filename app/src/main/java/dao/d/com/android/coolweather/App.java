@@ -1,7 +1,8 @@
 package dao.d.com.android.coolweather;
 
 import android.app.Application;
-import android.content.Context;
+
+import org.litepal.LitePal;
 
 public class App extends Application {
     private static App sContext;
@@ -10,6 +11,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         sContext = this;
+        LitePal.initialize(this);
     }
 
     public static App getAppContext() {

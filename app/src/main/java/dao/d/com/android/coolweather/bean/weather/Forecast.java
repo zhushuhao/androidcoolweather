@@ -8,6 +8,7 @@ public class Forecast implements Serializable {
     private String date;
     @SerializedName("tmp")
     private Temperature temperature;
+    @SerializedName("cond")
     private More more;
 
     public String getDate() {
@@ -62,7 +63,7 @@ public class Forecast implements Serializable {
     }
 
 
-    private class More implements Serializable {
+    public class More implements Serializable {
         @SerializedName("txt_d")
         private String info;
 

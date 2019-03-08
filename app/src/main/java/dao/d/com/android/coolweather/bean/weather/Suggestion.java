@@ -45,7 +45,7 @@ public class Suggestion implements Serializable {
         this.sport = sport;
     }
 
-    private class Comfort implements Serializable {
+    public class Comfort implements Serializable {
         @SerializedName("txt")
         private String info;
 
@@ -59,7 +59,7 @@ public class Suggestion implements Serializable {
     }
 
 
-    private class CarWash implements Serializable {
+    public class CarWash implements Serializable {
         @SerializedName("txt")
         private String info;
 
@@ -72,7 +72,7 @@ public class Suggestion implements Serializable {
         }
     }
 
-    private class Sport implements Serializable {
+    public class Sport implements Serializable {
         @SerializedName("txt")
         private String info;
 

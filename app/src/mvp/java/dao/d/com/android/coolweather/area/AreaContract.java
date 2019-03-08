@@ -1,11 +1,12 @@
 package dao.d.com.android.coolweather.area;
 
-import java.util.HashMap;
 import java.util.List;
 
+import dao.d.com.android.coolweather.BasePresenter;
 import dao.d.com.android.coolweather.bean.place.City;
 import dao.d.com.android.coolweather.bean.place.Country;
 import dao.d.com.android.coolweather.bean.place.Province;
+import io.reactivex.Flowable;
 
 public interface AreaContract {
     interface View {
@@ -53,48 +54,46 @@ public interface AreaContract {
     interface Model {
         /**
          * 加载省份
-         *
-         * @param map
          */
-        void loadProvince(HashMap<String, Object> map);
+        Flowable<List<Province>> loadProvince();
 
         /**
          * 加载城市
          *
-         * @param map
+         * @param provinceId
          */
-        void loadCity(HashMap<String, Object> map);
+        Flowable<List<City>> loadCity(int provinceId);
 
         /**
          * 加载县
          *
-         * @param map
+         * @param provinceId
+         * @param cityId
          */
-        void loadCountry(HashMap<String, Object> map);
+        Flowable<List<Country>> loadCountry(int provinceId, int cityId);
 
     }
 
-    abstract class Presenter {
+    abstract class Presenter extends BasePresenter {
         /**
          * 加载省份
-         *
-         * @param map
          */
-        abstract void loadProvince(HashMap<String, Object> map);
+        abstract void loadProvince();
 
         /**
          * 加载城市
          *
-         * @param map
+         * @param provinceId
          */
-        abstract void loadCity(HashMap<String, Object> map);
+        abstract void loadCity(int provinceId);
 
         /**
          * 加载县
          *
-         * @param map
+         * @param provinceId
+         * @param cityId
          */
-        abstract void loadCountry(HashMap<String, Object> map);
+        abstract void loadCountry(int provinceId, int cityId);
 
     }
 }

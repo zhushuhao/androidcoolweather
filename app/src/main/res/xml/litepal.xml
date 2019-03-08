@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value= "cool_weather" />
+    <versoin value="1"/>
+    <list>
+        <mapping class="dao.d.com.android.coolweather.bean.place.City"/>
+        <mapping class="dao.d.com.android.coolweather.bean.place.Country"/>
+        <mapping class="dao.d.com.android.coolweather.bean.place.Province"/>
+    </list>
+    <storage value="external" />
+</litepal>
